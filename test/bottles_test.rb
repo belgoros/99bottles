@@ -1,8 +1,8 @@
 require 'minitest/autorun'
 require 'minitest/pride'
-require_relative '../lib/bottles'
-
 require "minitest/reporters"
+
+require_relative '../lib/bottles'
 
 Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new
 

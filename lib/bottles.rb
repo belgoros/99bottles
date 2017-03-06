@@ -1,8 +1,3 @@
-require_relative 'bottle_number'
-require_relative 'bottle_number0'
-require_relative 'bottle_number1'
-
-
 class Bottles
   def song
     verses(99, 0)
@@ -13,16 +8,19 @@ class Bottles
   end
 
   def verse(number)
-    bottle_number = bottle_number_for(number)
-    next_bottle_number = bottle_number_for(bottle_number.successor)
+    bottle_number = BottleNumber.for(number)
 
     "#{bottle_number} of beer on the wall, ".capitalize +
     "#{bottle_number} of beer.\n" +
     "#{bottle_number.action}, " +
-    "#{next_bottle_number} of beer on the wall.\n"
+    "#{bottle_number.successor} of beer on the wall.\n"
   end
+end
 
-  def bottle_number_for(number)
+class BottleNumber
+  attr_reader :number
+
+  def self.for(number)
     case number
     when 0
       BottleNumber0
@@ -31,5 +29,57 @@ class Bottles
     else
       BottleNumber
     end.new(number)
+  end
+
+  def initialize(number)
+    @number = number
+  end
+
+  def to_s
+    "#{quantity} #{container}"
+  end
+
+  def container
+    "bottles"
+  end
+
+  def quantity
+    number.to_s
+  end
+
+  def action
+    "Take #{pronoun} down and pass it around"
+  end
+
+  def pronoun
+    "one"
+  end
+
+  def successor
+    BottleNumber.for(number - 1)
+  end
+end
+
+class BottleNumber0 < BottleNumber
+  def quantity
+    "no more"
+  end
+
+  def action
+    "Go to the store and buy some more"
+  end
+
+  def successor
+    BottleNumber.for(99)
+  end
+end
+
+class BottleNumber1 < BottleNumber
+  def container
+    "bottle"
+  end
+
+  def pronoun
+    "it"
   end
 end
