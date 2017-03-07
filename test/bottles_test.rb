@@ -1,9 +1,9 @@
-gem 'minitest', '~>5'
+gem 'minitest'
 require 'minitest/autorun'
 require 'minitest/pride'
-require_relative '../lib/bottles'
-
 require "minitest/reporters"
+
+require_relative '../lib/bottles'
 
 Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new
 
@@ -358,9 +358,9 @@ Take one down and pass it around, 8 bottles of beer on the wall.
 Take one down and pass it around, 7 bottles of beer on the wall.
 
 7 bottles of beer on the wall, 7 bottles of beer.
-Take one down and pass it around, 6 bottles of beer on the wall.
+Take one down and pass it around, 1 six-pack of beer on the wall.
 
-6 bottles of beer on the wall, 6 bottles of beer.
+1 six-pack of beer on the wall, 1 six-pack of beer.
 Take one down and pass it around, 5 bottles of beer on the wall.
 
 5 bottles of beer on the wall, 5 bottles of beer.
