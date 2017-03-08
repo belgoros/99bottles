@@ -1,5 +1,8 @@
 # 99 Bottles
 
+This is the code source of [99 bottles book](https://www.sandimetz.com/99bottles) by Sandi Metz.
+The last modifications have been merged into master branch.
+
 ## The Code
 
 * [Chapter 1](https://github.com/sandimetz/99bottles/commits/chapter-1)
