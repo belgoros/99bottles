@@ -1,19 +1,21 @@
+# frozen_string_literal: true
+
 class Bottles
   def song
     verses(99, 0)
   end
 
   def verses(starting, ending)
-    starting.downto(ending).collect {|i| verse(i)}.join("\n")
+    starting.downto(ending).collect { |i| verse(i) }.join("\n")
   end
 
   def verse(number)
     bottle_number = BottleNumber.for(number)
 
     "#{bottle_number} of beer on the wall, ".capitalize +
-    "#{bottle_number} of beer.\n" +
-    "#{bottle_number.action}, " +
-    "#{bottle_number.successor} of beer on the wall.\n"
+      "#{bottle_number} of beer.\n" \
+      "#{bottle_number.action}, " \
+      "#{bottle_number.successor} of beer on the wall.\n"
   end
 end
 
@@ -37,7 +39,7 @@ class BottleNumber
   end
 
   def container
-    "bottles"
+    'bottles'
   end
 
   def quantity
@@ -49,7 +51,7 @@ class BottleNumber
   end
 
   def pronoun
-    "one"
+    'one'
   end
 
   def successor
@@ -59,11 +61,11 @@ end
 
 class BottleNumber0 < BottleNumber
   def quantity
-    "no more"
+    'no more'
   end
 
   def action
-    "Go to the store and buy some more"
+    'Go to the store and buy some more'
   end
 
   def successor
@@ -72,23 +74,21 @@ class BottleNumber0 < BottleNumber
 end
 
 class BottleNumber1 < BottleNumber
-
   def container
-    "bottle"
+    'bottle'
   end
 
   def pronoun
-    "it"
+    'it'
   end
 end
 
 class BottleNumber6 < BottleNumber
-
   def quantity
-    "1"
+    '1'
   end
 
   def container
-    "six-pack"
+    'six-pack'
   end
 end
