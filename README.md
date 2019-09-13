@@ -33,3 +33,8 @@ http://docs.railsbridge.org/installfest/macintosh
 
 Ubuntu: http://docs.railsbridge.org/installfest/linux
 https://www.ruby-lang.org/en/installation/
+
+### Running
+
+- install the gems with `bundle`
+- run the tests with `ruby test/bottles_test.rb
