@@ -37,4 +37,4 @@ https://www.ruby-lang.org/en/installation/
 ### Running
 
 - install the gems with `bundle`
-- run the tests with `ruby test/bottles_test.rb
+- run the tests with `ruby test/bottles_test.rb`
